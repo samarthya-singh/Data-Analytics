@@ -1,0 +1,191 @@
+1).Statement to create the Contact table 
+
+  CREATE TABLE Contact (
+    contact_id INT PRIMARY KEY,
+    company_id INT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    city VARCHAR(50),
+    state VARCHAR(50),
+    zip VARCHAR(50),
+    ismain BOOLEAN,
+    email VARCHAR(50),
+    phone VARCHAR(50),
+    FOREIGN KEY (company_id) REFERENCES Company(company_id)
+);
+
+2).Statement to Create the Employee Table
+
+CREATE TABLE Employee (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(45),
+    LastName VARCHAR(45),
+    Salary DECIMAL(10,2),
+    HireDate DATE,
+    JobTitle VARCHAR(25),
+    Email VARCHAR(45),
+    Phone VARCHAR(12)
+);
+
+3).Statement to Create the ContactEmployee Table
+
+CREATE TABLE ContactEmployee (
+    ContactEmployeeID INT PRIMARY KEY,
+    ContactID INT,
+    EmployeeID INT,
+    ContactDate DATE,
+    Description VARCHAR(100),
+    FOREIGN KEY (ContactID) REFERENCES Contact(ContactID),
+    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
+);
+
+4) Update Lesley Bland’s phone number to 215-555-8800
+
+  UPDATE Employee
+SET Phone = '215-555-8800'
+WHERE FirstName = 'Lesley'
+  AND LastName = 'Bland';
+
+5).In the Company table, the statement that changes the name of “Urban
+Outfitters, Inc.” to “Urban Outfitters” . 
+
+ UPDATE Company
+SET CompanyName = 'Urban Outfitters'
+WHERE CompanyName = 'Urban Outfitters, Inc.';
+
+6).In ContactEmployee table, the statement that removes Dianne Connor’s contact
+event with Jack Lee (one statement).
+
+DELETE FROM ContactEmployee
+WHERE ContactEmployeeID = (
+    SELECT ce.ContactEmployeeID
+    FROM ContactEmployee ce
+    JOIN Contact c ON ce.ContactID = c.ContactID
+    JOIN Employee e ON ce.EmployeeID = e.EmployeeID
+    WHERE c.FirstName = 'Dianne'
+      AND c.LastName = 'Connor'
+      AND e.FirstName = 'Jack'
+      AND e.LastName = 'Lee'
+);
+
+7). What is the significance of “%” and “_” operators in the LIKE statement? 
+
+% means: match any number of characters (0 or more).
+_ means: match exactly one character.
+
+8).Explain Normalization in the Context of Databases
+
+Normalization is the process of organizing data in a database to reduce redundancy (duplicate data) and improve data integrity.
+It divides large tables into smaller, related tables and defines relationships between them.
+
+a.First Normal Form (1NF)
+
+No repeating groups
+
+Each column contains atomic (single) values
+
+b. Second Normal Form (2NF)
+
+Must be in 1NF
+
+No partial dependency on part of a composite key
+
+c. Third Normal Form (3NF)
+
+Must be in 2NF
+
+No transitive dependencies (non-key column should not depend on another non-key column)
+
+10) What does a JOIN in MySQL mean?
+
+A JOIN in MySQL is used to combine rows from two or more tables based on a related column between them.
+
+It allows you to retrieve data that is spread across multiple tables by matching rows using a common field (usually a primary key and a foreign key).
+
+
+
+11.)
+
+What do you understand about DDL, DCL, and DML in MySQL?
+
+In MySQL, SQL commands are divided into categories based on what they do. The three most important categories are DDL, DML, and DCL.
+
+a. DDL – Data Definition Language
+
+DDL is used to define or modify the structure of database objects
+(tables, views, indexes, schemas).
+
+🔹 Common DDL Commands:
+
+CREATE – create a table or database
+
+ALTER – modify a table
+
+DROP – delete a table
+
+TRUNCATE – delete all rows quickly
+
+RENAME – rename an object
+
+
+b.DML – Data Manipulation Language
+
+DML is used to insert, update, delete, and retrieve data.
+
+d. Common DML Commands:
+
+SELECT – read data
+
+INSERT – add data
+
+UPDATE – modify data
+
+DELETE – remove data
+
+c.DCL – Data Control Language
+
+DCL is used to control access and permissions in the database.
+
+c. Common DCL Commands:
+
+GRANT – give user permissions
+
+REVOKE – remove permissions
+
+12.)What is the role of the MySQL JOIN clause in a query, and what are some common types of joins?
+Role of the MySQL JOIN clause:
+
+The JOIN clause is used to combine rows from two or more tables based on a related column between them.
+It allows you to retrieve data that is stored across multiple tables by linking them through keys (usually primary key and foreign key).
+
+In short:
+ JOIN helps you fetch connected data from multiple tables in a single query.
+
+Common Types of Joins in MySQL
+1INNER JOIN
+
+Returns only the rows where both tables have matching values.
+
+SELECT * 
+FROM A 
+INNER JOIN B ON A.id = B.id;
+
+2 LEFT JOIN (LEFT OUTER JOIN)
+
+Returns all rows from the left table and only matching rows from the right table.
+
+3 RIGHT JOIN (RIGHT OUTER JOIN)
+
+Returns all rows from the right table and only matching rows from the left table.
+
+4 FULL JOIN (FULL OUTER JOIN)
+
+MySQL does not support FULL JOIN directly, but it can be simulated using UNION of LEFT + RIGHT join results.
+
+5 CROSS JOIN
+
+Returns the Cartesian product—every row of table A combined with every row of table B.
+
+
+
+
