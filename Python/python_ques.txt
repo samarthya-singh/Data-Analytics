@@ -1,0 +1,961 @@
+1) What are the types of Applications?
+Ans)
+Applications can be classified as desktop, web, mobile, standalone, client-server, distributed, enterprise, cloud, and embedded applications based on their usage and platform.
+
+2) What is programing?
+Ans)
+Programming is the process of writing instructions (code) that tell a computer what to do and how to do it in order to solve a problem or perform a task.
+
+3) What is Python ?
+Ans)
+Python is a high-level, interpreted, object-oriented programming language that is known for its simple syntax, readability, and versatility.
+
+4) Write a Python program to check if a number is positive, negative or zero.
+
+num=int(input("Enter a number: "))
+if (num>=0):
+  print("Number is Positive")
+else:
+  print("Number is negative")
+
+5)Write a Python program to get the Factorial number of given numbers.
+if num < 0:
+    print("Factorial is not defined for negative numbers")
+elif num == 0:
+    print("Factorial of 0 is 1")
+else:
+    fact = 1
+    for i in range(1, num + 1):
+        fact *= i
+    print(fact)
+
+6)Write a Python program to get the Fibonacci series of given range.
+
+num=int(input("Enter the number upto which you want"))
+def fabn(fa):
+  if fa==0:
+    return 0
+  elif fa==1:
+    return 1
+  else:
+    return fabn(fa-1)+fabn(fa-2)
+
+for i in range(num):
+  result=fabn(i)
+  print(result)
+
+7)How memory is managed in Python?
+Ans)
+
+Python manages memory automatically, so developers don’t need to allocate or free memory manually
+
+1. Private Heap Memory
+
+Python uses a private heap to store:
+Objects
+Data structures
+
+The programmer cannot directly access this memory.
+Python’s memory manager handles allocation and deallocation.
+
+2. Stack Memory
+in this we store the function in a memory and it is fast then a stack
+
+3. Garbage Collector
+ here all the uneccesary code is store which is not even use any where in a file at a run time
+
+
+8)What is the purpose continuing statement in python?
+Ans)
+
+The continue statement is used inside loops (for or while) to skip the current iteration and move directly to the next iteration of the loop
+
+9)Write python program that swap two number with temp variable and without temp variable.
+Ans)
+
+without third variable
+a=2
+b=3
+
+a,b=b,a
+print("Now a is: ",a)
+print("Now b is: ", b)
+
+2 with third variable
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+
+temp = a
+a = b
+b = temp
+
+print("After swapping:")
+print("a =", a)
+print("b =", b)
+
+10) Write a Python program to find whether a given number is even
+or odd, print out an appropriate message to the user.
+
+num = int(input("Enter a number: "))
+
+if num % 2 == 0:
+    print("The number is Even")
+else:
+    print("The number is Odd")
+
+11) Write a Python program to test whether a passed letter is a vowel
+or not
+Ans)
+
+ch = input("Enter a letter: ").lower()
+
+if ch in ['a', 'e', 'i', 'o', 'u']:
+    print("The letter is a vowel")
+else:
+    print("The letter is not a vowel")
+
+12) Write a Python program to sum of three given integers. However, if
+two values are equal sum will be zero.
+
+Ans)
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
+
+if a == b or b == c or a == c:
+    print("Sum is 0")
+else:
+    print("Sum is:", a + b + c)
+
+13) Write a Python program that will return true if the two given
+integer values are equal or their sum or difference is 5.
+
+Ans)
+a = int(input("Enter first integer: "))
+b = int(input("Enter second integer: "))
+
+if a == b or a + b == 5 or abs(a - b) == 5:
+    print(True)
+else:
+    print(False)
+
+
+14)Write a python program to sum of the first n positive integers.
+Ans)
+
+n = int(input("Enter a positive integer: "))
+
+if n <= 0:
+    print("Please enter a positive integer")
+else:
+    total = 0
+    for i in range(1, n + 1):
+        total += i
+    print("Sum =", total)
+
+15)Write a Python program to calculate the length of a string.
+Ans)
+
+a= input("enter name :")
+count=0
+for i in a:
+  count +=1
+
+print(count)
+
+16) Write a Python program to count the number of characters
+(character frequency) in a string
+
+Ans)
+s = input("Enter a string: ")
+freq = {}
+
+for char in s:
+    if char in freq:
+        freq[char] += 1
+    else:
+        freq[char] = 1
+
+print(freq)
+
+
+
+17)What are negative indexes and why are they used?
+Ans)
+Negative indexes in Python allow accessing elements from the end of a sequence, making code simpler and more readable.
+
+18)Write a Python program to count occurrences of a substring in a string. 
+Ans)
+a= input("enter name :")
+freq={}
+
+for char in a:
+  if char in freq:
+    freq[char] +=1
+  else:
+    freq[char]=1
+
+
+print(freq)
+
+19) Write a Python program to count the occurrences of each word in a given sentence 
+
+Asn)
+text = input("Enter some text")
+
+text = text.lower()
+words = text.split()
+
+word_count = {}
+
+for word in words:
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+
+print(word_count)
+
+20) Write a Python program to get a single string from two given strings,
+separated by a space and swap the first two characters of each string. 
+Ans)
+
+l="abcd"
+m="xyzp"
+new_l= m[:2] +l[2:]
+new_m=l[2:] +m[:2]
+
+result= new_l +" "+new_m
+print(result)
+
+
+21) Write a Python program to add 'in' at the end of a given string (length
+should be at least 3). If the given string already ends with 'ing' then
+add 'ly' instead if the string length of the given string is less than 3,
+leave it unchanged. 
+Ans)
+text = input("Enter a string: ")
+
+if len(text) < 3:
+    result = text
+elif text.endswith("ing"):
+    result = text + "ly"
+else:
+    result = text + "in"
+
+print("Result:", result)
+
+
+22) Write a Python function to reverses a string if its length is a multiple
+of 4. 
+Ans)
+text=input("Enter a string:")
+
+def rev(l):
+  b=""
+  for i in l:
+    b= i +b
+
+  return b
+
+if len(text) % 4==0:
+  print(rev(text))
+else:
+  print("Enter a valid stirng")
+
+
+23) Write a Python program to get a string made of the first 2 and the last
+2 chars from a given a string. If the string length is less than 2, return
+instead of the empty string. 
+Ans)
+text = input("Enter a string: ")
+
+if len(text) < 2:
+    result = ""
+else:
+    result = text[:2] + text[-2:]
+
+print("Result:", result)
+
+
+
+24)Write a Python function to insert a string in the middle of a string.
+Ans)
+main_str=input("Enter main strin:")
+insert_str=input("enter the add string:")
+
+def insert_string_middle(main_str, insert_str):
+    if not main_str:
+        return insert_str
+    mid = len(main_str) // 2
+    return main_str[:mid] + insert_str + main_str[mid:]
+
+print(insert_string_middle(main_str,insert_str)
+
+
+25)What is List? How will you reverse a list? 
+Ans)
+
+A List in Python is an ordered, mutable (changeable) collection that can store multiple values of different data types.
+
+🔹 Key Features of List
+
+Ordered (index-based)
+
+Mutable (can be changed)
+
+Allows duplicate values
+
+a=[1,2,3,4,5]
+
+left=0
+right=len(a)-1
+
+while left<right:
+  a[left],a[right]=a[right],a[left]
+  left +=1
+  right -=1
+
+print(a)
+
+27)Suppose list1 is [2, 33, 222, 14, and 25], what is list1 [-
+1]? 
+Ans)
+25
+
+28)Differentiate between append () and extend () methods? 
+Ans)
+append() adds an element as a single item to the list, while extend() adds elements of an iterable individually.
+
+
+29) Write a Python function to get the largest number, smallest num
+and sum of all from a list. 
+
+Ans)
+a=[2,3,7,4,5]
+
+def max_a(a):
+  left=0
+  right=len(a)-1
+  max_v=a[0]
+
+  while left<=right:
+    if a[left]>max_v:
+      max_v=a[left]
+
+    if a[right]>max_v:
+      max_v=a[right]
+
+    left +=1
+    right -=1
+  return max_v
+  
+def min_v(a):
+  left=0
+  right=len(a)-1
+  min_v=a[0]
+  while left<=right:
+    if a[left]<min_v:
+      min_v=a[left]
+    if a[right]<min_v:
+      min_v=a[right]
+    
+    left +=1
+    right -=1
+
+  return min_v
+
+def sum_list(a):
+  val=0
+  for i in a:
+    val=val+ i
+  return val
+
+print(sum_list(a))
+
+print(min_v(a))
+print(max_a(a))
+
+
+30)How will you compare two lists? 
+Ans)
+“In Python, lists can be compared using == for exact equality. If order doesn’t matter, we can use sets or Counter depending on duplicates.”
+
+
+31) Write a Python program to count the number of strings where the string
+length is 2 or more and the first and last character are same from a given list
+of strings. 
+
+Ans)
+def count_strings(words):
+    count = 0
+    for s in words:
+        if len(s) >= 2 and s[0] == s[-1]:
+            count += 1
+    return count
+
+words = ['abc', 'xyz', 'aba', '1221']
+print(count_strings(words))
+
+32)Write a Python program to remove duplicates from a list. 
+Ans)
+
+a = [1, 2, 3, 2, 4, 1, 5]
+
+unique_list = []
+for item in a:
+    if item not in unique_list:
+        unique_list.append(item)
+
+print(unique_list)
+
+
+33)Write a Python program to check a list is empty or not. 
+Ans)
+a = []
+
+if not a:
+    print("List is empty")
+else:
+    print("List is not empty")
+
+34) Write a Python function that takes two lists and returns true if they
+have at least one common member. 
+
+Ans)
+def common_member(a, b):
+    for item in a:
+        if item in b:
+            return True
+    return False
+
+list1 = [1, 2, 3, 4]
+list2 = [5, 6, 3, 8]
+
+print(common_member(list1, list2))
+
+35) Write a Python program to generate and print a list of first and last 5
+elements where the values are square of numbers between 1 and 30. 
+
+Ans)
+squares = []
+
+for i in range(1, 31):
+    squares.append(i * i)
+
+print("First 5 elements:", squares[:5])
+print("Last 5 elements:", squares[-5:])
+
+
+36) Write a Python function that takes a list and returns a new list with
+unique elements of the first list. 
+Ans)
+def unique_list(lst):
+    result = []
+    for item in lst:
+        if item not in result:
+            result.append(item)
+    return result
+
+a = [1, 2, 3, 2, 4, 1, 5]
+print(unique_list(a))
+
+37)Write a Python program to convert a list of characters into a string. 
+Ans)
+chars = ['P', 'y', 't', 'h', 'o', 'n']
+
+result = ''.join(chars)
+print(result)
+
+38)Write a Python program to select an item randomly from a list. 
+Ans)
+import random
+
+items = [10, 20, 30, 40, 50]
+
+random_item = random.choice(items)
+print(random_item)
+
+39)Write a Python program to find the second smallest number in a list. 
+Ans)
+def second_smallest(nums):
+    if len(set(nums)) < 2:
+        return "Second smallest does not exist"
+
+    smallest = float('inf')
+    second = float('inf')
+
+    for a in nums:
+        if a<smallest:
+            second=smallest
+            smallest=a
+
+        elif smallest<a<second:
+            second=a
+
+    return second
+
+a = [4, 1, 2, 1, 3]
+print(second_smallest(a))
+
+40)Write a Python program to get unique values from a list
+Ans)
+def unique_values(lst):
+    unique = []
+    for item in lst:
+        if item not in unique:
+            unique.append(item)
+    return unique
+
+a = [1, 2, 3, 2, 4, 1, 5]
+print(unique_values(a))
+
+41)Write a Python program to check whether a list contains a sub list 
+Ans)
+def is_sublist(main_list, sub_list):
+    n = len(sub_list)
+    for i in range(len(main_list) - n + 1):
+        if main_list[i:i+n] == sub_list:
+            return True
+    return False
+
+main = [1, 2, 3, 4, 5]
+sub = [3, 4]
+
+print(is_sublist(main, sub))
+
+42)Write a Python program to split a list into different variables
+Ans)
+data = [10, 20, 30]
+
+a, b, c = data
+
+print(a)
+print(b)
+print(c)
+
+43) What is Tuple? Difference between List and Tuple
+ans)
+A tuple is a collection of ordered elements that is immutable (cannot be changed after creation).
+“A tuple is an ordered, immutable collection, whereas a list is ordered but mutable.”
+
+44)Write a Python program to create a tuple with different data types. 
+Ans)
+my_tuple = (10, 3.14, "Python", True, [1, 2, 3])
+
+print(my_tuple)
+
+45)Write a Python program to unzip a list of tuples into individual lists. 
+Ans)
+data = [(1, 2), (3, 4), (5, 6)]
+
+list1, list2 = zip(*data)
+
+print(list(list1))
+print(list(list2))
+
+46)Write a Python program to convert a list of tuples into a dictionary.
+Ans)
+
+data = [('a', 1), ('b', 2), ('c', 3)]
+
+result = dict(data)
+print(result)
+
+
+47)How will you create a dictionary using tuples in python? 
+Ans)
+data = (('a', 1), ('b', 2), ('c', 3))
+
+my_dict = dict(data)
+print(my_dict)
+
+48)Write a Python script to sort (ascending and descending) a
+dictionary by value. 
+
+Ans)
+
+ASC
+data = {'a': 3, 'b': 1, 'c': 2}
+
+asc = dict(sorted(data.items(), key=lambda item: item[1]))
+print("Ascending:", asc)
+
+DESC
+desc = dict(sorted(data.items(), key=lambda item: item[1], reverse=True))
+print("Descending:", desc)
+
+49)Write a Python script to concatenate following dictionaries to create
+a new one. 
+
+Ans)
+dict1 = {1: 'a', 2: 'b'}
+dict2 = {3: 'c', 4: 'd'}
+dict3 = {5: 'e', 6: 'f'}
+
+new_dict = {}
+
+new_dict.update(dict1)
+new_dict.update(dict2)
+new_dict.update(dict3)
+
+print(new_dict)
+
+50)Write a Python script to check if a given key already exists in a
+dictionary. 
+Ans)
+my_dict = {'name': 'Sam', 'age': 23, 'city': 'Delhi'}
+
+key = 'age'
+
+if key in my_dict:
+    print("Key exists in dictionary")
+else:
+    print("Key does not exist")
+
+
+51)How Do You Traverse Through a Dictionary Object in Python? 
+Ans)
+my_dict = {'name': 'Sam', 'age': 23, 'city': 'Delhi'}
+
+for key in my_dict.items():
+    print(key)
+
+53)Write a Python script to print a dictionary where the keys are
+numbers between 1 and 15. 
+Ans)
+my_dict = {}
+
+for i in range(1, 16):
+    my_dict[i] = i * i   # value can be anything
+
+print(my_dict)
+
+54)Write a Python program to check multiple keys exists in a dictionary 
+Ans)
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+
+keys_to_check = ['a', 'b']
+
+if all(key in my_dict for key in keys_to_check):
+    print("All keys exist")
+else:
+    print("Some keys are missing")
+
+55)Write a Python script to merge two Python dictionaries 
+Ans)
+dict1 = {'a': 1, 'b': 2}
+dict2 = {'c': 3, 'd': 4}
+
+dict1.update(dict2)
+
+print(dict1)
+
+56)Write a Python program to map two lists into a dictionary
+Sample output: Counter ({'a': 400, 'b': 400,’d’: 400, 'c': 300}). 
+Ans)
+result = {}
+
+for k, v in zip(keys, values):
+    result[k] = result.get(k, 0) + v
+
+print(result)
+
+57)Write a Python program to find the highest 3 values in a dictionary 
+Ans)
+my_dict = {'a': 10, 'b': 45, 'c': 23, 'd': 90, 'e': 67}
+
+top_3 = sorted(my_dict.values(), reverse=True)[:3]
+
+print(top_3)
+
+
+57)Write a Python program to find the highest 3 values in a dictionary 
+Ans)
+my_dict = {'a': 10, 'b': 25, 'c': 15, 'd': 40, 'e': 30}
+
+# Method 1: Using sorted() to get top 3 values
+top_3_values = sorted(my_dict.values(), reverse=True)[:3]
+
+print("Top 3 values:", top_3_values)
+
+58)Write a Python program to combine values in python list of dictionaries.
+Sample data: [{'item': 'item1', 'amount': 400}, {'item': 'item2', 'amount':
+300}, o {'item': 'item1', 'amount': 750}]
+Expected Output:
+• Counter ({'item1': 1150, 'item2': 300})
+Ans)
+
+from collections import Counter
+
+# Sample data
+data = [
+    {'item': 'item1', 'amount': 400},
+    {'item': 'item2', 'amount': 300},
+    {'item': 'item1', 'amount': 750}
+]
+
+# Combine values
+result = Counter()
+for d in data:
+    result[d['item']] += d['amount']
+
+print(result)
+
+
+59)Write a Python program to create a dictionary from a string.
+Note: Track the count of the letters from the string. 
+Ans)
+# Sample string
+text = "hello world"
+
+# Method 1: Using a for loop
+letter_count = {}
+for char in text:
+    if char.isalpha():  # Optional: count only letters, ignore spaces/punctuation
+        letter_count[char] = letter_count.get(char, 0) + 1
+
+print(letter_count)
+
+60)Sample string:
+ 'w3resource' Expected output:
+• {'3': 1,’s’: 1, 'r': 2, 'u': 1, 'w': 1, 'c': 1, 'e': 2, 'o': 1}
+Ans)
+# Sample string
+text = 'w3resource'
+
+# Method 1: Using a for loop
+char_count = {}
+for char in text:
+    char_count[char] = char_count.get(char, 0) + 1
+
+print(char_count)
+
+61)Write a Python function to calculate the factorial of a number (a
+nonnegative integer)
+Ans)
+def factorial(n):
+    if n < 0:
+        return "Factorial not defined for negative numbers"
+    
+    result = 1
+    for i in range(1, n + 1):
+        result *= i  # Multiply result by i in each iteration
+    return result
+
+
+num = 5
+print(f"Factorial of {num} is {factorial(num)}")
+
+
+62)Write a Python function to check whether a number is in a given range 
+Ans)
+def is_in_range(number, start, end):
+    """
+    Check if 'number' is in the range [start, end] (inclusive)
+    """
+    if start <= number <= end:
+        return True
+    else:
+        return False
+
+
+num = 15
+print(is_in_range(num, 10, 20))  # True
+print(is_in_range(num, 16, 25))  # False
+
+63)Write a Python function to check whether a number is perfect or not. 
+Ans)
+def is_perfect(number):
+    if number <= 0:
+        return False  # Only positive numbers can be perfect
+    
+    # Find sum of proper divisors
+    sum_divisors = 0
+    for i in range(1, number):
+        if number % i == 0:
+            sum_divisors += i
+    
+    # Check if sum of divisors equals the number
+    return sum_divisors == number
+
+# Example usage
+num = 28
+if is_perfect(num):
+    print(f"{num} is a perfect number")
+else:
+    print(f"{num} is not a perfect number")
+
+
+64)Write a Python function that checks whether a passed string is
+palindrome or not 
+Ans)
+def is_palindrome(s):
+    # Remove spaces and convert to lowercase for uniform comparison
+    s = s.replace(" ", "").lower()
+    
+    # Check if the string is equal to its reverse
+    return s == s[::-1]
+
+# Example usage
+string1 = "Radar"
+string2 = "Hello"
+
+print(f"{string1} -> {is_palindrome(string1)}")  # True
+print(f"{string2} -> {is_palindrome(string2)}")  # False
+
+65)How Many Basic Types of Functions Are Available in Python? 
+Ans)
+1 pre_define function
+2 user define function
+3 high order function
+
+
+66)How can you pick a random item from a list or tuple? 
+Ans)
+import random
+
+my_list = [10, 20, 30, 40, 50]
+
+random_item = random.choice(my_list)
+print(random_item)
+
+67)How can you pick a random item from a range? 
+Ans)
+random_number = random.choice(range(1, 11))  # range is inclusive of 1, exclusive of 11
+print(random_number)
+
+68)How can you get a random number in python? 
+Ans)
+random_int = random.randint(1, 10)  # Random number from 1 to 10
+print(random_int)
+
+69)How will you set the starting value in generating random numbers? 
+Ans)
+With the help of seed we set the starting value
+import random
+
+# Set starting value (seed)
+random.seed(10)
+
+# Generate random numbers
+print(random.randint(1, 100))
+print(random.randint(1, 100))
+print(random.randint(1, 100))
+
+
+
+70) How will you randomize the items of a list in place? 
+
+Ans)
+use random.suffel
+import random
+
+# Original list
+my_list = [1, 2, 3, 4, 5]
+
+# Shuffle the list in place
+random.shuffle(my_list)
+
+print(my_list)
+
+
+
+83)Explain Exception handling? What is an Error in Python? 
+
+Ans)
+An error is an unexpected event that occurs during the execution of a program.
+
+Errors stop the program from running unless handled.
+#Exception handling
+
+Exception Handling is the process of catching and managing errors (exceptions) so the program doesn’t crash.
+
+In Python, this is done using try, except, else, and finally blocks.
+
+try:
+
+Code inside this block is executed normally.
+
+If an error occurs, Python looks for a matching except.
+
+except:
+
+Catches the specific exception or all exceptions if unspecified.
+
+Allows you to handle the error gracefully.
+
+else: (optional)
+
+Runs only if no exception occurred.
+
+finally: (optional)
+
+Runs always, whether an exception occurred or not.
+
+Useful for cleaning resources, like closing files.
+
+84)How many except statements can a try-except block have? Name
+Some built-in exception classes: 
+Ans)
+A try block can have multiple except blocks to handle different exceptions.
+There is no fixed limit; you can have as many as needed.
+You can also have one generic except: at the end to catch any exception not specifically handled.
+ZeroDivisionError → handles divide by zero
+
+ValueError → handles invalid input
+
+Exception → catches any other unhandled exceptions
+
+85)When will the else part of try-except-else be executed? 
+Ans)
+when ther be no exception is occurred then only the except else part is run
+
+86)Can one block of except statements handle multiple exception? 
+
+Ans)
+yes In Python, one except block can handle multiple exceptions by grouping them in a tuple.
+
+try:
+    # Code that may raise exceptions
+    num = int(input("Enter a number: "))
+    result = 10 / num
+except (ZeroDivisionError, ValueError):
+    print("An error occurred: either divide by zero or invalid input")
+else:
+    print("Result is:", result)
+
+87)When is the finally block executed? 
+Ans))
+It is mainly used for cleanup actions, like closing files, releasing resources, or resetting variables.
+Always executed after try and except blocks.
+
+88)What happens when „1‟== 1 is executed? 
+Ans)
+'1' (string) is not the same type as 1 (integer), so they are not equal.
+
+Python is strongly typed, so it does not implicitly convert '1' to 1.
+
+90)Write python program that user to enter only odd numbers, else
+will raise an exception. 
+Ans)
+# Custom exception for even numbers
+class EvenNumberError(Exception):
+    pass
+
+try:
+    num = int(input("Enter an odd number: "))
+    
+    # Check if the number is odd
+    if num % 2 == 0:
+        # Raise custom exception if number is even
+        raise EvenNumberError("You entered an even number! Please enter an odd number.")
+    else:
+        print(f"Thank you! You entered the odd number: {num}")
+        
+except ValueError:
+    print("Invalid input! Please enter an integer number.")
+except EvenNumberError as e:
+    print(e)
+
