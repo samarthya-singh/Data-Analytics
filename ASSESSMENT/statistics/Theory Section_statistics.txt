@@ -1,0 +1,125 @@
+1. What are the key properties of a Normal Distribution?
+
+The Normal Distribution (also called the Gaussian Distribution) is one of the most important concepts in statistics.
+
+Bell-Shaped and Symmetrical
+Mean = Median = Mode
+Defined by Two Parameters
+Total Area = 1 (or 100%)
+Tails Never Touch X-Axis
+Skewness = 0
+
+
+2. Define:
+o Probability Density Function 
+o Z-Score
+o Standard Normal Distribution
+
+Ans)
+
+Probability Density Function (PDF)
+
+Definition:
+A Probability Density Function (PDF) describes the likelihood of a continuous random variable taking a particular value.
+
+Key Points:
+
+Used for continuous data
+
+The area under the curve = 1
+
+Probability is calculated over an interval, not at a single point
+
+𝑃(𝑎<𝑋<𝑏)=Area under curve between a and b
+P(a<X<b)=Area under curve between a and b
+
+
+Z-Score
+
+Definition:
+A Z-score tells how many standard deviations a value is away from the mean.
+
+Standard Normal Distribution
+
+Definition:
+A Standard Normal Distribution is a normal distribution with:
+
+Mean (μ) = 0
+
+Standard Deviation (σ) = 1
+
+It is also called the Z-distribution.
+
+
+3. Differentiate between:
+o Discrete vs. Continuous Distributions
+o Binomial vs. Normal Distribution
+
+Ans)Discrete vs Continuous Distribution
+
+| Basis                      | Discrete Distribution                    | Continuous Distribution                    |
+| -------------------------- | ---------------------------------------- | ------------------------------------------ |
+| **Meaning**                | Deals with **countable values**          | Deals with **measurable values**           |
+| **Type of Data**           | Whole numbers (0,1,2,3…)                 | Any value within a range (e.g., 1.5, 2.78) |
+| **Function Used**          | Probability Mass Function (PMF)          | Probability Density Function (PDF)         |
+| **Probability at a Point** | Can calculate probability of exact value | Probability at exact value = 0             |
+| **Example**                | Number of students in class              | Height, weight, temperature                |
+
+
+Binomial vs Normal Distribution
+
+| Basis          | Binomial Distribution                  | Normal Distribution                   |
+| -------------- | -------------------------------------- | ------------------------------------- |
+| **Type**       | Discrete                               | Continuous                            |
+| **Shape**      | Can be skewed or symmetric             | Always symmetric (bell-shaped)        |
+| **Used For**   | Fixed number of trials with 2 outcomes | Large datasets with natural variation |
+| **Parameters** | n (trials), p (probability of success) | μ (mean), σ (standard deviation)      |
+| **Example**    | Tossing a coin 10 times                | Heights of people                     |
+
+
+
+4. In a standardized test, scores follow a normal distribution with mean = 100, std.
+dev = 15:
+• What is the probability that a student scores above 115?
+• What percentage of students scored between 85 and 115?
+
+Ans)
+
+Z=115−100​/15=15/15​=1
+
+So we need:
+
+P(Z>1)
+From the Z-table:
+P(Z<1)=0.8413
+Therefore:
+P(Z>1)=1−0.8413=0.1587
+
+Final Answer:
+P(X>115)=0.1587​
+
+15.87% probability
+
+2.Percentage of students between 85 and 115
+
+Step 1: Convert both values to Z-scores
+
+For 85:
+
+Z=85−100/15 =−1
+
+For 115:
+
+Z=115−100​/15=1
+
+So we need:
+
+P(−1<Z<1)
+
+From the Empirical Rule (68–95–99.7 rule):
+
+P(−1<Z<1)≈0.6827
+
+Final Answer:
+
+68.27%
