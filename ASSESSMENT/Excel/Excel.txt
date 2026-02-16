@@ -1,0 +1,79 @@
+1How to Edit an Already Existing Query in Power Query (Excel)
+Ans)
+
+Steps:
+
+Open Excel.
+
+Go to Data Tab.
+
+Click on Queries & Connections.
+
+On the right side panel, you will see your existing queries.
+
+Double click on the query
+        OR
+Right-click → Click Edit.
+
+Power Query Editor window will open.
+
+Make changes (filter, remove column, rename, etc.).
+
+Click Close & Load to update the data.
+
+
+2. Open the Expenses sheet and note that one of the column headings is blank - we will not
+be able to create a pivot table which includes all the data on the Expenses sheet if one of the
+field names that need to be used in our pivot table is blank. Select cell F4 and enter the
+following heading for the column: Tax Code. 
+
+Ans)
+
+Problem:
+Pivot table cannot work properly if any column header is blank.
+
+Steps:
+
+Open Expenses Sheet.
+Go to Cell F4 (blank heading).
+Type: Tax Code
+Press Enter.
+Refresh Pivot Table (Right click → Refresh).
+
+
+3. Filter the pivot table data with the slicer so that the supplier totals for only expenses that
+have been allocated to account IS-375 or account IS-390 are displayed in the pivot table. 
+
+Ans)
+
+Click anywhere inside Pivot Table.
+Go to PivotTable Analyze Tab.
+Click Insert Slicer.
+Select the field (Account Code or similar).
+Click OK.
+In slicer, hold Ctrl key.
+Select:
+IS-375
+IS-390
+
+Now pivot table will show totals only for these two accounts.
+
+
+
+Question 2 : Replace Complex Excel Array Formulas with Simple Power Query Solution.
+1) Goal is to extract a unique list of values from the Sales Rep Column, without using an
+Excel Array Formula. 
+
+Ans)
+
+Step-by-step:
+
+Select the data table.
+Go to Data Tab.
+Click From Table/Range.
+Power Query Editor will open.
+Select Sales Rep Column.
+Go to Home Tab in Power Query.
+Click Remove Rows → Select Remove Duplicates.
+Now only unique values remain.
+Click Close & Load.
