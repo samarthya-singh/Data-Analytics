@@ -1,0 +1,54 @@
+1. Create Trigger (AFTER INSERT)
+
+DELIMITER $$
+
+CREATE TRIGGER after_employee_insert
+AFTER INSERT ON employees
+FOR EACH ROW
+BEGIN
+    INSERT INTO employee_audit (
+        employee_id,
+        name,
+        position,
+        salary,
+        hire_date
+    )
+    VALUES (
+        NEW.Employee_id,
+        NEW.name,
+        NEW.position,
+        NEW.salary,
+        NEW.hire_date
+    );
+END $$
+
+DELIMITER ;
+
+
+2. Create Stored Procedure
+
+DELIMITER $$
+
+CREATE PROCEDURE add_employee (
+    IN emp_name VARCHAR(100),
+    IN emp_position VARCHAR(100),
+    IN emp_salary DECIMAL(10,2),
+    IN emp_hire_date DATE
+)
+BEGIN
+    INSERT INTO employees (name, position, salary, hire_date)
+    VALUES (emp_name, emp_position, emp_salary, emp_hire_date);
+END $$
+
+DELIMITER ;
+
+
+3. Call Stored Procedure
+
+CALL add_employee('Robert Brown', 'Data Analyst', 85000.00, '2024-02-10');
+
+
+How To Check 
+
+SELECT * FROM employees;
+SELECT * FROM employee_audit;
